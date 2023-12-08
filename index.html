@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="title">Create account</h1>
+    <form action="" class="account-form" enctype="multipart/form-data" id="form">
+      <div class="form-row">
+        <div class="col-2">
+          <label class="label" for="name">First Name *</label>
+          <input
+            class="text-input"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your first name"
+            data-name="name"
+            required
+          />
+        </div>
+        <div class="col-2">
+          <label class="label" for="surname">Last Name *</label>
+          <input
+            class="text-input"
+            type="text"
+            id="surname"
+            name="surname"
+            placeholder="Enter your last name"
+            data-name="name"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-1">
+        <label class="label" for="email">Email *</label>
+        <input
+          class="text-input"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          data-name="email"
+          required
+        />
+      </div>
+      <div class="form-row">
+        <div class="col-2">
+          <label class="label" for="password-1">Password *</label>
+          <input
+            class="text-input"
+            type="password"
+            id="password-1"
+            name="password-1"
+            placeholder="Enter correct your confirm password"
+            data-name="password"
+            required
+          />
+        </div>
+        <div class="col-2">
+          <label class="label required" for="password-2"
+            >Confirm password *</label
+          >
+          <input
+            class="text-input"
+            type="password"
+            id="password-2"
+            name="password-2"
+            placeholder="Enter correct your confirm password"
+            data-name="password"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-2">
+          <h3 class="label">Gender:</h3>
+          <div class="control-wrapper">
+            <div class="radio">
+              <input id="mail" name="gender" type="radio" checked />
+              <label for="mail" class="control-label">Mail</label>
+            </div>
+            <div class="radio">
+              <input id="female" name="gender" type="radio" checked />
+              <label for="female" class="control-label">Female</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <h3 class="label">Hobbies:</h3>
+          <div class="control-wrapper">
+            <div class="checkbox">
+              <input id="music" name="music" type="checkbox" />
+              <label for="music" class="control-label">Music</label>
+            </div>
+            <div class="checkbox">
+              <input id="sports" name="sports" type="checkbox" checked />
+              <label for="sports" class="control-label">Sports</label>
+            </div>
+            <div class="checkbox">
+              <input id="travel" name="travel" type="checkbox" />
+              <label for="travel" class="control-label">Music</label>
+            </div>
+            <div class="checkbox">
+              <input id="movies" name="movies" type="checkbox" checked />
+              <label for="movies" class="control-label">Sports</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-2">
+          <label for="source-income" class="label">Source of Income</label>
+          <div class="select-wrapper">
+            <select
+              class="select text-input"
+              name="source-income"
+              id="source-income"
+            >
+              <option value="1">Employed</option>
+              <option value="2">Self-employed</option>
+              <option value="3">Unemployed</option>
+            </select>
+            <span class="custom-arrow"></span>
+          </div>
+        </div>
+        <div class="col-2">
+          <label for="income-range" class="label">Income</label>
+          <div class="form-row">
+            <input
+              type="range"
+              id="income-range"
+              name="income"
+              class="income-range"
+              min="0"
+              max="50"
+            />
+            <span class="range-indicator" id="income-range-value"></span>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-2">
+          <label for="upload-picture-input" class="label"
+            >Upload Profile Picture</label
+          >
+          <div class="input-file-wrapper">
+            <input
+              type="file"
+              id="upload-picture-input"
+              input="uploadPicture"
+              hidden
+              multiple
+            />
+            <button class="false-upload-input" id="false-upload-input">
+              Chose File
+            </button>
+            <span class="upload-file-text" id="upload-text"
+              >No file chosen</span
+            >
+          </div>
+        </div>
+        <div class="col-2">
+          <label for="age" class="label">Age</label>
+          <input
+            id="age"
+            name="age"
+            type="number"
+            value="18"
+            class="text-input"
+            data-name="age"
+          />
+        </div>
+      </div>
+      <div class="col-1 textarea-wrapper">
+        <label for="bio" class="label">Bio</label>
+        <textarea
+          id="bio"
+          name="bio"
+          class="textarea"
+          placeholder="Text about your self"
+        ></textarea>
+        <button class="submit" id="create">Create</button>
+      </div>
+    </form>
+    <script type="module" src="/dest/validator.js"></script>
+    <script type="module" src="/dest/functions.js"></script>
+    <script type="module" src="/dest/index.js"></script>
+    <script type="module" src="/dest/income-range.js"></script>
+  </body>
+</html>

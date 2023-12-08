@@ -1,0 +1,407 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  min-width: 1200px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.col-1,
+.col-2 {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+}
+
+.col-1 {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.col-2 {
+  width: 50%;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  padding: 50px 0;
+  text-align: center;
+  color: white;
+  background-color: darkmagenta;
+}
+
+.label {
+  font-weight: bold;
+  margin: 0.5rem 1.5rem;
+  font-size: 1rem;
+  color: darkmagenta;
+}
+
+.control-wrapper {
+  display: flex;
+}
+
+.radio,
+.checkbox {
+  position: relative;
+  margin: 0.5rem;
+}
+.radio input,
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+}
+.radio input + .control-label:before,
+.checkbox input + .control-label:before {
+  content: "";
+  background: white;
+  border-radius: 100%;
+  border: 1px solid #0c000c;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  top: -0.2rem;
+  margin-right: 1rem;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+  transition: all 250ms ease;
+  z-index: 1;
+}
+.radio input + .control-label:after,
+.checkbox input + .control-label:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  width: 22px;
+  height: 22px;
+  border-radius: 100%;
+  z-index: 2;
+}
+.radio input:checked + .control-label:before,
+.checkbox input:checked + .control-label:before {
+  width: 32px;
+  height: 32px;
+  background-color: lightpink;
+}
+.radio input:checked + .control-label:after,
+.checkbox input:checked + .control-label:after {
+  background-color: darkmagenta;
+}
+.radio input:disabled + .control-label:before,
+.checkbox input:disabled + .control-label:before {
+  box-shadow: inset 0 0 0 4px gray;
+  border-color: #404040;
+  background: #404040;
+}
+.radio input + .control-label:empty:before,
+.checkbox input + .control-label:empty:before {
+  margin-right: 0;
+}
+
+.checkbox input:checked + .control-label:after {
+  content: "✓";
+  color: white;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-input,
+.select,
+.textarea,
+option {
+  font-size: 1rem;
+  color: black;
+}
+.text-input::placeholder,
+.select::placeholder,
+.textarea::placeholder,
+option::placeholder {
+  color: darkmagenta;
+}
+
+.text-input {
+  flex: 1 1 auto;
+  height: 40px;
+  max-height: 40px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 1rem;
+}
+
+.select-wrapper {
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 4px;
+  position: relative;
+}
+
+.select {
+  width: inherit;
+  appearance: none;
+  background: white;
+  border: 0;
+  margin: 0;
+  outline: 0;
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 3rem;
+  pointer-events: none;
+}
+.custom-arrow::before, .custom-arrow::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+.custom-arrow::before {
+  border-bottom: 5px solid gray;
+  top: 25%;
+  left: 50%;
+}
+.custom-arrow::after {
+  border-top: 5px solid gray;
+  top: 65%;
+  left: 50%;
+}
+
+.income-range {
+  width: 80%;
+  accent-color: darkmagenta;
+}
+
+.range-indicator {
+  padding: 8px 24px;
+  font-size: 1rem;
+  border-radius: 4px;
+  color: white;
+  background: darkmagenta;
+}
+
+.input-file-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.false-upload-input {
+  padding: 8px 24px;
+  border-radius: 4px;
+  margin-right: 8px;
+  border: 0;
+  max-width: max-content;
+  background: gray;
+  color: white;
+  cursor: pointer;
+}
+
+.textarea-wrapper {
+  gap: 20px;
+}
+
+.textarea {
+  height: 200px;
+  padding: 8px 20px;
+}
+
+.submit {
+  padding: 0.5rem 2rem;
+  border: 0;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: darkmagenta;
+  color: white;
+  transition: all 0.3s ease;
+  width: max-content;
+  align-self: end;
+}
+
+.account-form {
+  margin: 0 auto;
+  padding: 0 100px;
+}
+
+.valid {
+  border: 1px solid green;
+  outline: 1px solid green;
+  color: green;
+}
+.valid::placeholder {
+  color: green;
+}
+
+.invalid {
+  border: 1px solid red;
+  outline: 1px solid red;
+  color: red;
+}
+.invalid::placeholder {
+  color: red;
+}
+
+.error-container {
+  color: red;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/*# sourceMappingURL=style.css.map */
